@@ -1,0 +1,33 @@
+# Compilación Maven
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Archivos temporales de IntelliJ
+*.iws
+*.ipr
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Configuración local de Maven
+.mvn/timing.properties
+
+# Java
+*.class
+
+# Archivos temporales de Windows
+~$*
+
+# Variables de entorno
+.env

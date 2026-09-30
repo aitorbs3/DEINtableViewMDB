@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Importamos los elementos que vamos a utilizar en la interfaz -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- Contenedor principal de la ventana -->
+<VBox maxHeight="-Infinity"
+      maxWidth="-Infinity"
+      minHeight="-Infinity"
+      minWidth="-Infinity"
+      prefHeight="500.0"
+      prefWidth="415.0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="es.aitorbarros.tabla.controladores.HelloController">
+
+   <children>
+
+      <!-- Primera fila: nombre, campo de texto y botón de añadir -->
+      <HBox prefHeight="28.0" prefWidth="560.0">
+
+         <children>
+
+            <!-- Etiqueta del nombre, cuyo texto viene del ResourceBundle -->
+            <Label fx:id="lbl_firstName"
+                   text="%label.firstName">
+
+               <font>
+                  <Font size="17.0" />
+               </font>
+
+            </Label>
+
+            <!-- Campo donde se introduce el nombre -->
+            <TextField fx:id="txt_FirstName">
+
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+
+            </TextField>
+
+            <!-- Botón para añadir una persona -->
+            <Button fx:id="btn_add"
+                    mnemonicParsing="false"
+                    onAction="#addPersona"
+                    text="%button.add">
+
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+
+            </Button>
+
+         </children>
+
+      </HBox>
+
+
+      <!-- Segunda fila: apellido y campo de texto -->
+      <HBox prefHeight="30.0" prefWidth="560.0">
+
+         <children>
+
+            <!-- Etiqueta del apellido -->
+            <Label fx:id="lbl_lastName"
+                   text="%label.lastName">
+
+               <font>
+                  <Font size="17.0" />
+               </font>
+
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+
+            </Label>
+
+            <!-- Campo donde se introduce el apellido -->
+            <TextField fx:id="txt_LastName">
+
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+
+            </TextField>
+
+         </children>
+
+      </HBox>
+
+
+      <!-- Tercera fila: fecha de nacimiento -->
+      <HBox prefHeight="33.0" prefWidth="560.0">
+
+         <children>
+
+            <!-- Etiqueta de la fecha -->
+            <Label fx:id="lbl_birthDate"
+                   text="%label.birthDate">
+
+               <font>
+                  <Font size="17.0" />
+               </font>
+
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+
+            </Label>
+
+            <!-- Selector de fecha -->
+            <DatePicker fx:id="DatePicker">
+
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+
+            </DatePicker>
+
+         </children>
+
+      </HBox>
+
+
+      <!-- Fila con los botones de restaurar y eliminar -->
+      <HBox prefHeight="39.0" prefWidth="560.0">
+
+         <children>
+
+            <!-- Restaura las personas iniciales -->
+            <Button fx:id="btn_restoreRows"
+                    mnemonicParsing="false"
+                    onAction="#restoreRows"
+                    text="%button.restore">
+
+               <font>
+                  <Font size="15.0" />
+               </font>
+
+               <HBox.margin>
+                  <Insets right="10.0" top="10.0" />
+               </HBox.margin>
+
+            </Button>
+
+            <!-- Elimina las filas seleccionadas -->
+            <Button fx:id="btn_deleteSelectedRows"
+                    mnemonicParsing="false"
+                    onAction="#deleteSelectedRows"
+                    text="%button.delete">
+
+               <font>
+                  <Font size="15.0" />
+               </font>
+
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+
+            </Button>
+
+         </children>
+
+      </HBox>
+
+
+      <!-- Tabla donde se muestran las personas -->
+      <TableView fx:id="tablaPersonas"
+                 prefHeight="304.0"
+                 prefWidth="360.0">
+
+         <columns>
+
+            <!-- Columna del identificador -->
+            <TableColumn fx:id="col_Id"
+                         prefWidth="75.0"
+                         text="Id" />
+
+            <!-- Columna del nombre -->
+            <TableColumn fx:id="col_FirstName"
+                         prefWidth="100.0"
+                         text="%label.firstName" />
+
+            <!-- Columna del apellido -->
+            <TableColumn fx:id="col_LastName"
+                         prefWidth="100.0"
+                         text="%label.lastName" />
+
+            <!-- Columna de la fecha de nacimiento -->
+            <TableColumn fx:id="col_BirthDate"
+                         prefWidth="100.0"
+                         text="%label.birthDate" />
+
+         </columns>
+
+      </TableView>
+
+   </children>
+
+   <!-- Espacio interior alrededor de toda la interfaz -->
+   <padding>
+
+      <Insets bottom="20.0"
+              left="20.0"
+              right="20.0"
+              top="20.0" />
+
+   </padding>
+
+</VBox>
